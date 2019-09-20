@@ -87,3 +87,30 @@ body {
   color: red;
   text-align: center;
 }
+
+input {
+  width: 50%;
+  display: flex;
+  margin-left: 25%;
+}
+
+.edit-title {
+  display:flex;
+  margin-left: 45%;
+}
+
+.buttons {
+  display: flex;
+  /* border: 1px solid black; */
+  width: 25%;
+  justify-content: space-around;
+  margin-left:37.5%;
+}
+
+.edit-delete-button {
+  top: 25px;
+  right: 25px;
+  border: 1px solid grey;
+  padding: 5px 10px;
+  background-color: lightseagreen;
+}

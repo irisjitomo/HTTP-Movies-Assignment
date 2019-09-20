@@ -48,9 +48,18 @@ import axios from 'axios';
           .catch(err => console.log(err))
       }
 
+      const deleteMovie = e => {
+          e.preventDefault();
+          axios.delete(`http://localhost:5000/api/movies/${props.match.params.id}`)
+          .then(res => {
+            //   props.updateMovie(res)
+              props.history.push('/')
+          })
+      }
+
     return (
         <div>
-            <h2>Edit Movie</h2>
+            <h2 className="edit-title">Edit Movie</h2>
             <form onSubmit={submit}>
                 <input 
                 name="title" 
@@ -76,7 +85,10 @@ import axios from 'axios';
                 placeholder="Stars" 
                 onChange={handleChange}
                 value={detail.stars}/>
-                <button>Finish Editing</button>
+                <div className="buttons">
+                <button className="edit-delete-button">Finish Editing</button>
+                <button className="edit-delete-button" onClick={deleteMovie}>Delete</button>
+                </div>
             </form>
         </div>
     )
